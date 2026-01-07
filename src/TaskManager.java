@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +12,13 @@ public class TaskManager {
     public Task addTask (String description) {
         Task task = new Task(description);
         tasks.add(task);
+
+        TaskStorage storage = new TaskStorage();
+        try {
+            storage.saveTasks(tasks);
+        } catch (IOException e) {
+            System.out.println("Failed to save the task: " + e.getMessage());
+        }
         return task;
     }
 

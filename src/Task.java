@@ -13,7 +13,7 @@ public class Task {
         COMPLETED
     }
 
-    private static int idCounter = 0;
+    private int idCounter = 0;
 
     public Task(String description) {
         //i need function to will keep track of id number and status
@@ -32,8 +32,15 @@ public class Task {
         return description;
     }
 
-    private Status getStatus() {
+    public Status getStatus() {
         return status;
     }
 
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
 }

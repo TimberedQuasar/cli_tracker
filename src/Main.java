@@ -1,8 +1,17 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         TaskManager taskManager = new TaskManager();
+        try{
+
+            BufferedWriter writer = new BufferedWriter(new FileWriter("tasks.json"));
+            writer.close();
+        }catch(Exception e){
+            System.out.println("Error initializing tasks.json: " + e.getMessage());
+        }
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Welcome to the CLI Task Manager!");
