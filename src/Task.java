@@ -15,7 +15,7 @@ public class Task {
 
     private static int idCounter = 0;
 
-    public void createTask(String description) {
+    public Task(String description) {
         //i need function to will keep track of id number and status
         this.id = idCounter++;
         this.description = description;
