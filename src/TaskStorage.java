@@ -17,21 +17,21 @@ public class TaskStorage {
     public void saveTasks(List<Task> tasks) throws IOException {
         TaskStorage.ensureFileExists(FILE_NAME);
         BufferedWriter writer = new BufferedWriter(new FileWriter(FILE_NAME));
-        writer.write("{\n  \"tasks\": [\n");
+        writer.write("{\n   \"tasks\": [\n");
         for (int i = 0; i < tasks.size(); i++) {
             writer.write(serializeTask(tasks.get(i)));
             if (i < tasks.size() - 1) {
                 writer.write(",\n");
             }
         }
-        writer.write("]");
+        writer.write("\n\t]\n}");
         writer.close();
     }
 
     // Serializacja pojedynczego zadania do JSON
     private String serializeTask(Task task) {
         return String.format(
-                "{ \n\"id\": %d,\n \"description\": \"%s\",\n \"status\": \"%s\",\n \"createdAt\": \"%s\",\n \"updatedAt\": \"%s\"\n}",
+                "\t\t{\n\t\t\t\"id\": %d,\n\t\t\t\"description\": \"%s\",\n\t\t\t\"status\": \"%s\",\n\t\t\t\"createdAt\": \"%s\",\n\t\t\t\"updatedAt\": \"%s\"\n\t\t}",
                 task.getId(),
                 task.getDescription(),
                 task.getStatus().name(),
