@@ -36,7 +36,7 @@ public class Main {
                         System.out.println("Task deleted: ID = " + deleteId);
                         break;
 
-/**                    case "mark-in-progress":
+                   case "mark-in-progress":
                         int inProgressId = Integer.parseInt(arguments);
                         taskManager.markTaskInProgress(inProgressId);
                         System.out.println("Task marked as 'in progress': ID = " + inProgressId);
@@ -67,7 +67,7 @@ public class Main {
                         printHelp();
                         break;
 
-                    **/default:
+                    default:
                         System.out.println("Unknown command. Type 'help' for a list of commands.");
                 }
             } catch (Exception e) {

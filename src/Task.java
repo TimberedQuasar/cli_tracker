@@ -7,7 +7,7 @@ public class Task {
     private final LocalDateTime createdAt;
     public LocalDateTime updatedAt;
 
-    private enum Status {
+    public enum Status {
         PENDING,
         IN_PROGRESS,
         COMPLETED

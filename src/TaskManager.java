@@ -35,5 +35,41 @@ public class TaskManager {
         throw new IllegalArgumentException("Task with ID " + id + " not found.");
     }
 
+    public Task markTaskInProgress(int id) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                task.status = Task.Status.IN_PROGRESS;
+                task.updatedAt = java.time.LocalDateTime.now();
+                return task;
+            }
+        }
+        throw new IllegalArgumentException("Task with ID " + id + " not found.");
+    }
+
+    public Task markTaskDone(int id) {
+        for (Task task : tasks) {
+            if (task.getId() == id) {
+                task.status = Task.Status.COMPLETED;
+                task.updatedAt = java.time.LocalDateTime.now();
+                return task;
+            }
+        }
+        throw new IllegalArgumentException("Task with ID " + id + " not found.");
+    }
+
+    public List<Task> listAllTasks() {
+        return tasks;
+    }
+
+    public List<Task> listTasksByStatus(Task.Status status) {
+        List<Task> filteredTasks = new ArrayList<>();
+        for (Task task : tasks) {
+            if (task.status == status) {
+                filteredTasks.add(task);
+            }
+        }
+        return filteredTasks;
+    }
+
 
 }
