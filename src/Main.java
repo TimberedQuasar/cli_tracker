@@ -22,7 +22,7 @@ public class Main {
                         System.out.println("Task added: ID = " + task.getId());
                         break;
 
-/**                    case "update":
+                    case "update":
                         String[] updateParts = arguments.split(" ", 2);
                         int updateId = Integer.parseInt(updateParts[0]);
                         String newDescription = updateParts[1];
@@ -36,7 +36,7 @@ public class Main {
                         System.out.println("Task deleted: ID = " + deleteId);
                         break;
 
-                    case "mark-in-progress":
+/**                    case "mark-in-progress":
                         int inProgressId = Integer.parseInt(arguments);
                         taskManager.markTaskInProgress(inProgressId);
                         System.out.println("Task marked as 'in progress': ID = " + inProgressId);

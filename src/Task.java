@@ -2,10 +2,10 @@ import java.time.LocalDateTime;
 
 public class Task {
     private final int id;
-    private final String description;
-    private Status status;
+    public String description;
+    public Status status;
     private final LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
+    public LocalDateTime updatedAt;
 
     private enum Status {
         PENDING,
